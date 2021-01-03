@@ -1,0 +1,8 @@
+apiVersion: v1 # versao do k8s
+kind: Pod # Tipo do vai ser instaciado
+metadata: # infos do pod
+  name: pod-example
+spec: # especificacoes do pod
+  containers: # info do container em quem deve se basear
+  - name: pod-exemplo
+    image: nginx:1.17-alpine # vai buscar dentro do docker hub

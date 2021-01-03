@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-nginx
+spec: # Spec do deployment
+  selector:
+    matchLabels:
+      app: hello-nginx
+  template: # Modelo de containers
+    metadata:
+      labels: # labels para ajudar a encontrar os pods
+        app: hello-nginx
+    spec: # specs do container
+      containers:
+      - name: nginx
+        image: nginx:1.17-alpine
+        ports: # porta que vai aberta para acessos externos
+        - containerPort: 80
